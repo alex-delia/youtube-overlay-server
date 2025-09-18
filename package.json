@@ -1,0 +1,31 @@
+{
+  "name": "twitch-overlay-sever",
+  "scripts": {
+    "dev": "NODE_ENV=development bun run --hot src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "start": "bun typecheck && NODE_ENV=production bun run src/index.ts",
+    "db:deploy": "bunx prisma migrate deploy",
+    "db:migrate": "bunx prisma migrate dev"
+  },
+  "type": "module",
+  "dependencies": {
+    "@alexdelia/polar-betterauth": "^1.1.6",
+    "@polar-sh/sdk": "^0.34.16",
+    "@prisma/client": "^6.5.0",
+    "better-auth": "^1.3.9",
+    "hono": "^4.9.6",
+    "hono-rate-limiter": "^0.4.2",
+    "rate-limit-redis": "^4.2.2",
+    "redis": "^5.8.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@types/bun": "latest",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.3.0",
+    "prettier": "3.6.2",
+    "prisma": "^6.5.0",
+    "typescript-eslint": "^8.43.0"
+  }
+}
